@@ -1,15 +1,45 @@
 /**  function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. **/
 
 function computerPlay() {
-    const options = ['Rock', 'Paper', 'Scissors'];
-    const randomNumber = Math.floor(Math.random() * 3);
-    return options [randomNumber];
-}
-  console.log(computerPlay() )
-    
-   
-  
+    const options = ['rock', 'paper', 'scissors'];
+    const randomNumber = options[Math.floor(Math.random() * 3)]; //generates a random number between 0 - 2
+    return randomNumber; // will return a random element from the array above
+} 
 
-/** function that plays a single round of Rock Paper Scissors. **/
-/** The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock" **/
-/** Make your function’s playerSelection parameter case-insensitive (so users can input rock, ROCK, RocK or any other variation). **/
+//Play game
+function playRound (playerSelection, computerSelection) {
+
+// player win outcomes
+
+     if (playerSelection === 'scissors' && computerSelection === 'paper') {  
+                return('You win! scissors beats paper');
+
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+            return('You win! Rock beats scissors');
+
+    } else if (playerSelection === 'paper ' && computerSelection === 'rock') {
+            return('You win! Paper beats rocks');
+
+//Draw outcomes
+   } else if (playerSelection === computerSelection) {
+        return('Draw');
+    } 
+
+// computer win outcomes
+ else if ( computerSelection === 'scissors' && playerSelection === 'paper') {
+     return('You loose! Scissors beats paper');
+
+ } else if ( computerSelection === 'rock' && playerSelection === 'scissors') {
+    return('You loose! Rock beats scissors');
+
+ }else if (computerSelection === 'paper' && playerSelection === 'rock') {
+    return( 'You loose! Paper beats rock');
+ }
+
+
+};
+
+
+const playerSelection = 'rock';
+const computerSelection = (computerPlay); // change to computer play after completing function
+console.log(playRound(playerSelection, computerSelection))
