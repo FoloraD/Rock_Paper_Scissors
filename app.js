@@ -21,11 +21,10 @@ function playRound (playerSelection, computerSelection) {
             return('You win! Paper beats rocks');
 
 //Draw outcomes
-   } else if (playerSelection === computerSelection) {
-        return('Draw');
-    } 
+  } else if (playerSelection === computerSelection) {
+    return('Draw'); } 
 
-// computer win outcomes
+//computer win outcomes
  else if ( computerSelection === 'scissors' && playerSelection === 'paper') {
      return('You loose! Scissors beats paper');
 
@@ -39,7 +38,6 @@ function playRound (playerSelection, computerSelection) {
 
 };
 
-
-const playerSelection = 'rock';
-const computerSelection = (computerPlay); // change to computer play after completing function
-console.log(playRound(playerSelection, computerSelection))
+const playerSelection = 'paper';
+ const computerSelection = computerPlay()  // change to computer play after completing function
+ console.log(playRound(playerSelection, computerSelection))
