@@ -15,22 +15,25 @@ const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const resetBtn = document.getElementById("reset");
 
-/** 1.... function that computer randomly selects from array of ‘Rock’, ‘Paper’ or ‘Scissors’ and return a value. **/
+//function that computer randomly selects from array of ‘Rock’, ‘Paper’ or ‘Scissors’ and return a value. 
 
 function computerPlay() {
     const options = ['rock', 'paper', 'scissors'];
     const randomNumber = options[Math.floor(Math.random() * 3)]; //generates a random number between 0 - 2
     return randomNumber; // will return a random element from the array above
 } 
-// creat function for winner
+// function to determine result of playing 1 round.
 function determineResult(playerSelection, computerSelection) {
    
     if (playerSelection === computerSelection) {
         return ['draw', playerSelection, computerSelection]
     }
    
-    //array selection - 1st selection is player, 2nd computer, 3rd is winner
-    const winningCombos = [ ['scissors', 'paper', 'scissors'], ['rock', 'scissors', 'rock'],  [ 'paper', 'rock', 'paper']  ] // 3 winning combos
+    //winingCombos - stores the wining combinations in a nested array. 
+    //Each nested array -[ [ 0 ~ player selection ], [1~ computer selection], [2 ~ winning item ]
+    const winningCombos = [ ['scissors', 'paper', 'scissors'], ['rock', 'scissors', 'rock'],  [ 'paper', 'rock', 'paper']  ] // each array contain the winning combos for the game. eg scissors beats paper, so scissors win
+    
+    // For loop: start at [0][0] loop through the winningCombos arrays to compare player selection and computer selection. conditions set for when player wins or if computer wins.
     for (let index = 0; index < winningCombos.length; index++) {
         if (winningCombos[index][0] === playerSelection && winningCombos[index][1] === computerSelection) {
             return ['you', playerSelection, computerSelection ]  
@@ -48,7 +51,7 @@ function playRound (playerSelection, computerSelection) {
   const result = determineResult(playerSelection, computerSelection)
   console.log(result) // returns values in array
 
-  `${result[0]} wins!, ${result[1]} beats ${result[2]}` // string interpolation
+  //`${result[0]} wins!, ${result[1]} beats ${result[2]}` // string interpolation
 
   //How do we keep score & remove below logic.
 // player win outcomes
@@ -102,10 +105,10 @@ function playRound (playerSelection, computerSelection) {
  } else if (computerChoice == 5) {
         updateResult("The computer has won the game") 
  }
- 
+ // function that updates the result on the game board
 function updateResult(resultString) { 
     document.getElementById('result').innerHTML = resultString
-    document.getElementById('result').style.color ="black";
+    document.getElementById('result').style.color ="green";
 }
 
 // play 5 round game
