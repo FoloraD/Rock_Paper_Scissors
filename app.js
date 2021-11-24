@@ -51,10 +51,16 @@ function playRound (playerSelection, computerSelection) {
   const result = determineResult(playerSelection, computerSelection)
   console.log(result) // returns values in array
 
-  //`${result[0]} wins!, ${result[1]} beats ${result[2]}` // string interpolation
+  
 
-  //How do we keep score & remove below logic.
-// player win outcomes
+  //TO DO List 
+  // 1. write a function to keep score (0 -5)
+  //2. & improve on the below logic. less repetition and cleaner code
+  // use this `${result[0]} wins!, ${result[1]} beats ${result[2]}` // string interpolation for game out come.
+  // add event listeners for game
+
+
+//player win outcomes
 
      if (playerSelection === 'scissors' && computerSelection === 'paper') {  
                 //return('You win! scissors beats paper');
@@ -77,7 +83,7 @@ function playRound (playerSelection, computerSelection) {
 //Draw outcomes
   } else if (playerSelection === computerSelection) {
    // return('Draw'); 
-   updateResult("it's a draw! Play again")
+   updateResult("It's a draw! Play again")
 } 
 
 //computer win outcomes
@@ -107,13 +113,13 @@ function playRound (playerSelection, computerSelection) {
  }
  // function that updates the result on the game board
 function updateResult(resultString) { 
-    document.getElementById('result').innerHTML = resultString
-    document.getElementById('result').style.color ="green";
+    document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
+    document.getElementById('result').style.color ="green"; // update this section - colours for outcomes red-loose, green-win, black-draw
 }
 
 // play 5 round game
 };
 
-const playerSelection = 'scissors';
- const computerSelection = computerPlay() // change to computer play after completing function/ computerPlay() 
- console.log(playRound(playerSelection, computerSelection)) // play 1 round
+const playerSelection = 'scissors'; // add function for player choice
+ const computerSelection = computerPlay() 
+ console.log(playRound(playerSelection, computerSelection)) // play 1 round & shows result on console
