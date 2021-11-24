@@ -8,14 +8,31 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h2>Computer Choice: <span id="computer-choice"></span></h2>
-    <h2>User Choice: <span id="user-choice"></span></h2>
-    <h2>Result: <span id="result"></span></h2>
+    <!-- Computer input / Player input /game result-->
+    <div id="game-board">
+        <h2>Computer Choice: <span id="computer-choice"></span></h2>
+        <h2>Player Choice: <span id="player-choice"></span></h2>
+        <h2>Result: <span id="result">Score</span></h2>
+    </div>
 
-    <button id="rock"> rock </button>
-    <button id="paper"> paper </button>
-    <button id="scissors"> scissors </button>
+    <!-- Rock / paper / scissor/ reset buttons-->
+    <div id="selection-buttons"> 
+        <button id="rock"> rock </button>
+        <button id="paper"> paper </button>
+        <button id="scissors"> scissors </button>
+        <button id="reset"> reset </button>
+    </div>
+    
+    <!-- Scoreboard-->
+    <div id="score-board">
+        <h2>Computer Score: <span id="computer-score"></span></h2>
+        <h2>Player Score: <span id="player-score"></span></h2>
 
+    </div>
+    
+    
+    <!-- Js file-->
     <script src="app.js"></script>
 </body>
+
 </html>
