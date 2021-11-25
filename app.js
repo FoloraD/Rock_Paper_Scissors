@@ -3,6 +3,8 @@
 let playerScore = 0;
 let computerScore = 0;
 
+
+
 //Computer input / Player input /game result//
 const computerChoice = document.getElementById('computer-choice')
 const playerChoice = document.getElementById('player-choice')
@@ -68,7 +70,7 @@ function playRound (playerSelection, computerSelection) {
      if (playerSelection === 'scissors' && computerSelection === 'paper') {  
                 //return('You win! scissors beats paper');
                 playerScore++;
-              updateResult('You win! scissors beats paper')
+            updateResult('You win! scissors beats paper')
             document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
 
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
@@ -80,38 +82,38 @@ function playRound (playerSelection, computerSelection) {
     } else if (playerSelection === 'paper ' && computerSelection === 'rock') {
            // return('You win! Paper beats rocks');
            playerScore++;
-       updateResult('You win! Paper beats rocks')
-    document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
+           updateResult('You win! Paper beats rocks')
+           document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
 
 //Draw outcomes
   } else if (playerSelection === computerSelection) {
    // return('Draw'); 
-   updateResult("It's a draw! Play again")
+            updateResult("It's a draw! Play again")
 } 
 
 //computer win outcomes
  else if ( computerSelection === 'scissors' && playerSelection === 'paper') {
      //return('You loose! Scissors beats paper');
-     computerScore++;
-   updateResult('You loose! Scissors beats paper')
-   document.getElementById("computer-score").innerHTML = computerChoice  // adds points to computer scoreboard
+            computerScore++;
+            updateResult('You loose! Scissors beats paper')
+            document.getElementById("computer-score").innerHTML = computerChoice  // adds points to computer scoreboard
 
  } else if ( computerSelection === 'rock' && playerSelection === 'scissors') {
     //return('You loose! Rock beats scissors');
-    computerScore++;
-    updateResult('You loose! Rock beats scissors');
+            computerScore++;
+            updateResult('You loose! Rock beats scissors');
 
  }else if (computerSelection === 'paper' && playerSelection === 'rock') {
     //return( 'You loose! Paper beats rock');
-    computerScore++;
-   updateResult('You loose! Paper beats rock')
+            computerScore++;
+            updateResult('You loose! Paper beats rock')
  }
 
  //select game winner
- if (playerChoice == 5) {
+ if (playerScore == 5) {
      updateResult("you have won the game")
 
- } else if (computerChoice == 5) {
+ } else if (computerScore == 5) {
         updateResult("The computer has won the game") 
  }
  // function that updates the result on the game board
@@ -120,9 +122,36 @@ function updateResult(resultString) {
     document.getElementById('result').style.color ="red"; // update this section - colours for outcomes red-loose, green-win, black-draw
 }
 
-// play 5 round game
+
 };
 
-const playerSelection = 'scissors'; // add function for player choice
+// play a 5 round game
+function game(playerChoice) {    //event listener will fill in the playerChoice with rock/paper/scissors
+    let player = playerChoice;
+    let computer = computerPlay();
+
+    playRound(player, computer)
+
+
+}
+
+//click buttons event listener for when player selects a button for rock paper scissors
+
+rock.addEventListener('click', () => {
+    game("rock");
+});
+paper.addEventListener('click', () => {
+    game("paper");
+});
+scissors.addEventListener('click', () => {
+    game("scissors");
+});
+resetBtn.addEventListener('click', function () {
+    location.reload();
+});
+
+
+const playerSelection = game() // game function is player choice from buttons pressed
  const computerSelection = computerPlay() 
  console.log(playRound(playerSelection, computerSelection)) // play 1 round & shows result on console
+ 
