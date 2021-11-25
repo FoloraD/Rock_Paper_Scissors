@@ -96,7 +96,7 @@ function playRound (playerSelection, computerSelection) {
      //return('You loose! Scissors beats paper');
             computerScore++;
             updateResult('You loose! Scissors beats paper')
-            document.getElementById("computer-score").innerHTML = computerChoice  // adds points to computer scoreboard
+            document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
 
  } else if ( computerSelection === 'rock' && playerSelection === 'scissors') {
     //return('You loose! Rock beats scissors');
