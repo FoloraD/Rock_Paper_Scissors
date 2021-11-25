@@ -1,0 +1,46 @@
+*{
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#main-container {
+    background-color: #feea00;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.2em solid white;
+    border-radius: 0.7em;
+}
+
+#title-box {
+    letter-spacing: 0.4em;
+    word-spacing: 0.2em;
+    font-weight: lighter;
+    font-size: 1.2em;
+}
+
+#selection-buttons {
+    margin: 1.5em 0;
+    width: 100vw;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+#game-board {
+    width: 19em;
+}

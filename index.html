@@ -8,28 +8,34 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <section id="main-container"> 
+
+        <div id="title-box"> 
+            <h1> Rock Paper Scissors </h1>
+        </div>
+
     <!-- Computer input / Player input /game result-->
-    <div id="game-board">
-        <h2>Computer Choice: <span id="computer-choice"></span></h2>
-        <h2>Player Choice: <span id="player-choice"></span></h2>
-        <h2>Result: <span id="result">Score</span></h2>
-    </div>
+        <div id="game-board">
+            <p>Computer Choice: <span id="computer-choice"></span></p>
+            <p>Player Choice: <span id="player-choice"></span></p>
+            <p><span id="result">Score</span></p>
+        </div>
 
-    <!-- Rock / paper / scissor/ reset buttons-->
-    <div id="selection-buttons"> 
-        <button id="rock"> rock </button>
-        <button id="paper"> paper </button>
-        <button id="scissors"> scissors </button>
-        <button id="reset"> reset </button>
-    </div>
-    
-    <!-- Scoreboard-->
-    <div id="score-board">
-        <h2>Computer Score: <span id="computer-score"></span></h2>
-        <h2>Player Score: <span id="player-score"></span></h2>
+        <!-- Rock / paper / scissor/ reset buttons-->
+        <div id="selection-buttons"> 
+            <button id="rock" class="button"> rock </button>
+            <button id="paper" class="button"> paper </button>
+            <button id="scissors" class="button"> scissors </button>
+            <button id="reset" class="button"> reset </button>
+        </div>
+        
+        <!-- Scoreboard-->
+        <div id="score-board">
+            <h2>Computer Score: <span id="computer-score"></span></h2>
+            <h2>Player Score: <span id="player-score"></span></h2>
 
-    </div>
-    
+        </div>
+    </section>
     
     <!-- Js file-->
     <script src="app.js"></script>
