@@ -123,13 +123,13 @@ function game(playerChoice) {    //event listener will fill in the playerChoice 
     let player = playerChoice;
     let computer = computerPlay();
 
-    playRound(player, computer)
-
-    if (playerScore == 5) {
+        if (playerScore == 5) {
         updateResult("you have won the game")
    
     } else if (computerScore == 5) {
            updateResult("The computer has won the game") 
+    } else {
+        playRound(player, computer)
     }
     
 }
