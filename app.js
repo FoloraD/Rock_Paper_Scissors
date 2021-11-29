@@ -125,6 +125,7 @@ function game(playerChoice) {    //event listener will fill in the playerChoice 
 
         if (playerScore == 5) {
         updateResult("you have won the game")
+    
    
     } else if (computerScore == 5) {
            updateResult("The computer has won the game") 
