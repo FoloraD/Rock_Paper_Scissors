@@ -1,11 +1,9 @@
 //0.... create player and computer variables & Dom id's
-
+//Set computer & player scores to 0. These will get updated when playing the game.
 let playerScore = 0;
 let computerScore = 0;
 
-
-
-//Computer input / Player input /game result//
+// Show on the DOM the Computer input / Player input /game result//
 const computerChoice = document.getElementById('computer-choice')
 const playerChoice = document.getElementById('player-choice')
 const resultsDisplay = document.getElementById('results')
@@ -26,6 +24,8 @@ function computerPlay() {
 } 
 // function to determine result of playing 1 round.
 function determineResult(playerSelection, computerSelection) {
+    console.log(`player selected: "${playerSelection}"`);
+    console.log(`Computer selected: "${computerSelection}"`);
    
     if (playerSelection === computerSelection) {
         return ['draw', playerSelection, computerSelection]
@@ -38,7 +38,7 @@ function determineResult(playerSelection, computerSelection) {
     // For loop: start at [0][0] loop through the winningCombos arrays to compare player selection and computer selection. conditions set for when player wins or if computer wins.
     for (let index = 0; index < winningCombos.length; index++) {
         if (winningCombos[index][0] === playerSelection && winningCombos[index][1] === computerSelection) {
-            return ['you', playerSelection, computerSelection ]  
+            return ['player', playerSelection, computerSelection ]  
             //player is winner here
         } 
         if (winningCombos[index][1] === playerSelection && winningCombos[index][0] === computerSelection) {
@@ -72,18 +72,21 @@ function playRound (playerSelection, computerSelection) {
                 playerScore++;
             updateResult('You win! scissors beats paper')
             document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
+          
 
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
             //return('You win! Rock beats scissors');
             playerScore++;
             updateResult('You win! Rock beats scissors')
             document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
+          
 
-    } else if (playerSelection === 'paper ' && computerSelection === 'rock') {
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
            // return('You win! Paper beats rocks');
            playerScore++;
            updateResult('You win! Paper beats rocks')
            document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
+           
 
 //Draw outcomes
   } else if (playerSelection === computerSelection) {
@@ -97,45 +100,49 @@ function playRound (playerSelection, computerSelection) {
             computerScore++;
             updateResult('You loose! Scissors beats paper')
             document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
+           
 
  } else if ( computerSelection === 'rock' && playerSelection === 'scissors') {
     //return('You loose! Rock beats scissors');
             computerScore++;
             updateResult('You loose! Rock beats scissors');
             document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
+          
 
  }else if (computerSelection === 'paper' && playerSelection === 'rock') {
     //return( 'You loose! Paper beats rock');
             computerScore++;
             updateResult('You loose! Paper beats rock')
             document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
+           
 
  }
-
- //select game winner
- if (playerScore == 5) {
-     updateResult("you have won the game")
-
- } else if (computerScore == 5) {
-        updateResult("The computer has won the game") 
- }
+ 
  // function that updates the result on the game board
-function updateResult(resultString) { 
+ function updateResult(resultString) { 
     document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
     document.getElementById('result').style.color ="red"; // update this section - colours for outcomes red-loose, green-win, black-draw
+    document.getElementById("player-choice").innerHTML = playerSelection // adds the players selection (r/p/s) to the gameboard
+    document.getElementById("computer-choice").innerHTML = computerSelection // adds the computer selection (r/p/s) to the gameboard
 }
 
 
 };
 
-// play a 5 round game
+// play a 5 round game & keep score up to five.
 function game(playerChoice) {    //event listener will fill in the playerChoice with rock/paper/scissors
     let player = playerChoice;
     let computer = computerPlay();
 
     playRound(player, computer)
 
-
+    if (playerScore == 5) {
+        updateResult("you have won the game")
+   
+    } else if (computerScore == 5) {
+           updateResult("The computer has won the game") 
+    }
+    
 }
 
 //click buttons event listener for when player selects a button for rock paper scissors
