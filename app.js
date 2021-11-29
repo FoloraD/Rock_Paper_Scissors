@@ -39,11 +39,11 @@ function determineResult(playerSelection, computerSelection) {
     for (let index = 0; index < winningCombos.length; index++) {
         if (winningCombos[index][0] === playerSelection && winningCombos[index][1] === computerSelection) {
             return ['player', playerSelection, computerSelection ]  
-            //player is winner here
+            //player is winner of this round
         } 
         if (winningCombos[index][1] === playerSelection && winningCombos[index][0] === computerSelection) {
             return ['computer', computerSelection, playerSelection]
-            //computer is winner here
+            //computer is winner of this round
         }
     }
 }
@@ -59,62 +59,50 @@ function playRound (playerSelection, computerSelection) {
   // 1. write a function to keep score (0 -5)
   //2. & improve on the below logic. less repetition and cleaner code
   // use this `${result[0]} wins!, ${result[1]} beats ${result[2]}` // string interpolation for game out come.
-  // add event listeners for game
+  // 3. add event listeners for game
 
-  /**  Rock  =>  Beats Scissors => Loses to Paper
-    Paper =>  Beats Rock => Loses to Scissors
-    Scissors => Beats Paper => Loses to Rock **/
+ 
 
 //player win outcomes
 
+ /**  Rock  =>  Beats Scissors => Loses to Paper
+    Paper =>  Beats Rock => Loses to Scissors
+    Scissors => Beats Paper => Loses to Rock **/
+
      if (playerSelection === 'scissors' && computerSelection === 'paper') {  
-                //return('You win! scissors beats paper');
+              
                 playerScore++;
-            updateResult('You win! scissors beats paper')
-            document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
-          
+            updateResult('You win! scissors beats paper')     
 
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            //return('You win! Rock beats scissors');
+            
             playerScore++;
-            updateResult('You win! Rock beats scissors')
-            document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
-          
+            updateResult('You win! Rock beats scissors')   
 
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-           // return('You win! Paper beats rocks');
-           playerScore++;
-           updateResult('You win! Paper beats rocks')
-           document.getElementById("player-score").innerHTML = playerScore   // adds points to player scoreboard
            
+           playerScore++;
+           updateResult('You win! Paper beats rocks')       
 
 //Draw outcomes
   } else if (playerSelection === computerSelection) {
-   // return('Draw'); 
             updateResult("It's a draw! Play again")
-} 
 
 //computer win outcomes
- else if ( computerSelection === 'scissors' && playerSelection === 'paper') {
-     //return('You loose! Scissors beats paper');
+}  else if ( computerSelection === 'scissors' && playerSelection === 'paper') {
+     
             computerScore++;
             updateResult('You loose! Scissors beats paper')
-            document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
-           
 
  } else if ( computerSelection === 'rock' && playerSelection === 'scissors') {
     //return('You loose! Rock beats scissors');
             computerScore++;
             updateResult('You loose! Rock beats scissors');
-            document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
-          
-
+            
  }else if (computerSelection === 'paper' && playerSelection === 'rock') {
     //return( 'You loose! Paper beats rock');
             computerScore++;
             updateResult('You loose! Paper beats rock')
-            document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer scoreboard
-           
 
  }
  
@@ -122,10 +110,11 @@ function playRound (playerSelection, computerSelection) {
  function updateResult(resultString) { 
     document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
     document.getElementById('result').style.color ="red"; // update this section - colours for outcomes red-loose, green-win, black-draw
-    document.getElementById("player-choice").innerHTML = playerSelection // adds the players selection (r/p/s) to the gameboard
-    document.getElementById("computer-choice").innerHTML = computerSelection // adds the computer selection (r/p/s) to the gameboard
+    document.getElementById("player-choice").innerHTML = playerSelection // adds the players selection (r/p/s) to the game board
+    document.getElementById("computer-choice").innerHTML = computerSelection // adds the computer selection (r/p/s) to the game board
+    document.getElementById("computer-score").innerHTML = computerScore  // adds points to computer score counter
+    document.getElementById("player-score").innerHTML = playerScore   // adds points to player score counter
 }
-
 
 };
 
