@@ -8,37 +8,46 @@
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
-    <section id="main-container"> 
+   
 
         <header id="title-box"> 
             <h1> Rock Paper Scissors </h1>
         </header>
 
+           <!-- Scoreboard-->
+        <div id="score-board">
+            <div id="player-label" class="badge">player</div>
+            <div id="computer-label" class="badge">computer</div>
+            <span id="player-score">0</span>:<span id="computer-score">0</span>
+        </div>
+
     <!-- Computer input / Player input /game result-->
         <div id="game-board">
-            <p>Computer Choice: <span id="computer-choice"></span></p> <!-- this where the player and computer choices are displayed-->
-            <p>Player Choice: <span id="player-choice"></span></p>
+          <!--<p>Computer Choice: <span id="computer-choice"></span></p>  this where the player and computer choices are displayed-->
+           <!--  <p>Player Choice: <span id="player-choice"></span></p> -->
             <p><span id="result">Score</span></p>
             
         </div>
 
-        <!-- Rock / paper / scissor/ reset buttons-->
+        <div id="round"> 0</div>
+        <!-- Rock / paper / scissor/ buttons-->
         <div id="selection-buttons"> 
-            <button id="rock" class="button"> rock </button>
-            <button id="paper" class="button"> paper </button>
-            <button id="scissors" class="button"> scissors </button>
-            <button id="reset" class="button"> reset </button>
+            <div class="choices">
+                <div class="choice" id="rock">
+                    <img src="images\rockhand.png">
+                </div>
+                <div class="choice" id="paper">
+                    <img src="images\paperhand.png">
+                </div>
+                <div class="choice" id="scissors">
+                    <img src="images\scissorshand.png">
+                </div>
+            </div>
+
+         <p id="action-message"> Make Your Move</p>
         </div>
         
-        <!-- Scoreboard-->
-        <div id="score-board">
-            <p>Computer Score: <span id="computer-score"></span></p>
-            <p>Player Score: <span id="player-score"></span></p>
-            
 
-        </div>
-    </section>
-    
     <!-- Js file-->
     <script src="app.js"></script>
 </body>

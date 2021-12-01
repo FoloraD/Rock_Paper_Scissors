@@ -1,8 +1,78 @@
+/* universal selector to get rid of default margin padding */
 *{
-  margin: 0;  
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+      background-color: #feea00;
+  }
+
+  header {
+      background: white;
+      padding: 20px;
+  }
+
+  header > h1 {
+      color: #25272E;
+      text-align: center;
+      font-family: sans-serif;
+
+  }
+
+  /* Scoreboard*/
+  #score-board {
+
+    margin: 20px auto;
+    padding: 15px 20px;
+    border: 3px; 
+    border-style: solid;
+    border-color:  white;
+    border-radius: 4px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 46px;
+    width: 250px;
+    position: relative;
+  }
+
+  .badge {
+    background-color: #E2584D;
+    color: white;
+    font-size: 14px;
+    padding: 2px 10px;
+    font-family: sans-serif;
+  }
+
+  #player-label {
+      position:absolute;
+      top: 30px;
+      left: -25px;
+
+  }
+
+  #computer-label {
+    position:absolute;
+    top: 30px;
+    right: -30px;
+
 }
+
+#result {
+    font-size: 40px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/**
+
 
 html, body {
     font-family: Arial, Helvetica, sans-serif;
