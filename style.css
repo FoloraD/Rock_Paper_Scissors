@@ -63,7 +63,55 @@
     font-size: 40px;
     font-family: sans-serif;
     text-align: center;
+    font-weight: bold;
 }
+
+
+#game-board {
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+/* the div that holds the rock paper scissors images (parent)*/
+.choices { 
+    margin: 50px 0;
+    text-align: center;
+   
+}
+
+/* rock paper scissors images (child)*/
+.choice {
+    display: inline-block;
+    border: solid 4px;
+    border-radius: 50%;
+    margin: 0 20px;  
+    padding: 5%;
+    transition: all 0.3s ease; 
+}
+
+.choice:hover {
+    cursor: pointer;
+    background: /*#E2584D;*/ #CCCCFF
+}
+
+#action-message {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
