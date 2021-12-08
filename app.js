@@ -88,12 +88,12 @@ function localGame() {
     scores[result[0]] = scores[result[0]] + 1; //dynamic object
     console.log(scores); //accessing the score from the round
 
-    updateResult(`${result[0]} wins!, ${result[1]} beats ${result[2]}`);
+    updateResult(`${result[0]} wins! ${result[1]} beats ${result[2]}`);
   }
 
   // function that updates the result on the game board
   function updateResult(resultString) {
-    // document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
+   //  document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
     // document.getElementById('result').style.color ="red"; // update this section - colours for outcomes red-loose, green-win, black-draw
     // document.getElementById("player-choice").innerHTML = playerSelection // adds the players selection (r/p/s) to the game board
     // document.getElementById("computer-choice").innerHTML = computerSelection // adds the computer selection (r/p/s) to the game board
