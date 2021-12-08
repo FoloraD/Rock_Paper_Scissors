@@ -69,7 +69,8 @@ function localGame() {
   function playRound(playerSelection) {
     if (round === 5) {
       // check if round is 5, if yes then exit game. update ui to say who won.
-      console.log("game over");
+      console.log("Game Over");
+      updateResult("Game Over")
       return;
     }
 
@@ -93,7 +94,7 @@ function localGame() {
 
   // function that updates the result on the game board
   function updateResult(resultString) {
-   //  document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
+    document.getElementById('result').innerHTML = resultString // adds the game outcome to the game board screen. on the results section.
     // document.getElementById('result').style.color ="red"; // update this section - colours for outcomes red-loose, green-win, black-draw
     // document.getElementById("player-choice").innerHTML = playerSelection // adds the players selection (r/p/s) to the game board
     // document.getElementById("computer-choice").innerHTML = computerSelection // adds the computer selection (r/p/s) to the game board
